@@ -26,10 +26,10 @@ def subarray(arr,k,x):
     # print(my_list)
     for i in range(0,len(arr),k):
         l = arr[i:i+k]
-            
+        return l
 
 arr = [ 21, 23, 56, 65, 34, 54, 76, 32, 23, 45, 21, 23, 25]
 k = 5
 x = 21
 
-subarray(arr,k)
+print(subarray(arr,k,x))

@@ -44,22 +44,21 @@ print("Sorted list:",list1)
 # -------- ALgoExpert Method----------
 # Time = O(N)
 # Space = O(N)
+
 def selectionSort(arr):
-    curr_idx = 0
-    while curr_idx < len(arr) - 1:
-        small_ele = curr_idx
-        for i in range(curr_idx + 1,len(arr)):
-            if arr[small_ele] > arr[i]:
-                small_ele = i
-        swap(curr_idx,small_ele,arr)
-        curr_idx+=1
+    for i in range(len(arr)-1):
+        min_val = arr[i]
+        for j in range(i+1, len(arr)):
+            if arr[j] < min_val:
+                min_val = arr[j]
+
+        min_idx = arr.index(min_val, i)
+        if arr[i] != arr[min_idx]:
+            arr[i], arr[min_idx] = arr[min_idx], arr[i]
     return arr
 
-def swap(i,j,arr):
-    arr[i],arr[j] = arr[j],arr[i]
-
 if __name__ == '__main__':
-    arr = [7,8,2,1,9,6,2]
+    arr = [50, 0, 2, 0, 3, 4]
     print(selectionSort(arr))
 
 
